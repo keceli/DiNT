@@ -1,0 +1,21 @@
+# cmd conda build . -c conda-forge
+package:
+    name: dint
+    version: "2.0.0"
+
+source:
+    path: .
+
+requirements:
+    build:
+        - cmake
+        - {{ compiler('fortran') }}
+        - blas
+        - openblas # [linux]
+        - lapack
+    run:
+        - cmake
+        - {{ compiler('fortran') }}
+        - blas
+        - openblas # [linux]
+        - lapack
