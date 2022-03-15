@@ -124,7 +124,7 @@ c initialize for this trajectory
       istepw = 0
       step = 0.d0
 
-      if (lchkdis.eq..true.) then
+      if (lchkdis.eqv..true.) then
         iturn = 0
       else
         iturn =1
