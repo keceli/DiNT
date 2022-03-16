@@ -39,7 +39,7 @@ c Subtract off momentum that is not rotational.
       include 'param.f'
       include 'c_sys.f'
       include 'c_ran.f'
-#include <sprng_f.h>
+
 
       integer nclu
       double precision pp(3,mnat),mmm(mnat),temp0,pp2(3,mnat),
@@ -57,8 +57,8 @@ c and unit standard deviation
       do i=1,nclu
       do j=1,3
  10      continue
-         r1 = sprng(rng_stream)
-         r2 = sprng(rng_stream)
+         r1 = rand()
+         r2 = rand()
          x1=2.d0*r1-1.d0
          x2=2.d0*r2-1.d0
          w = x1*x1+x2*x2

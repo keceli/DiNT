@@ -38,7 +38,7 @@ c-------------------------------------------------------------------------------
       include 'c_traj.f'
       include 'c_ran.f'
       include 'c_output.f'
-#include <sprng_f.h>
+
 
       integer i,j,k,ii,ibrea,imm,nems,inems,nhtot,rnwell,nfq
       double precision bgj(3),bgjt,er(3),ert,tmp,tempi0,kem,
@@ -134,7 +134,7 @@ c     accept structure or not
             write(6,*)"Wt(i-1) = ",emsw(imm)
             write(6,*)"Trial geometry ACCEPTED"
           else
-            rn=sprng(rng_stream)
+            rn=rand()
             ratio=wt/emsw(imm)
             write(6,*)"Wt(i) = ",wt
             write(6,*)"Wt(i-1) = ",emsw(imm)

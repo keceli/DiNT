@@ -35,7 +35,7 @@ c-------------------------------------------------------------------------------
       implicit none
       include 'param.f'
       include 'c_ran.f'
-#include <sprng_f.h>
+
 
 c local
       integer nmax,i
@@ -49,7 +49,7 @@ c local
         ptot=ptot+dexp(-ei/(temp*kb))
       enddo
 
-      r1 = sprng(rng_stream)
+      r1 = rand()
 
       pp=0.d0
       nmqn=-1.d0

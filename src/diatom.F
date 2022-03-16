@@ -40,7 +40,7 @@ c     from NAT8.1.
       implicit none
       include 'param.f'
       include 'c_ran.f'
-#include <sprng_f.h>
+
 c input
       double precision rin,rout,tau,jj
       double precision mmm(2),mi,mj,xx(3,2),pp(3,2)
@@ -56,7 +56,7 @@ c local
       double precision theta,mdum,rmass,xji,ppo,xxo
 
       do i=1,5
-      xvec(i) = sprng(rng_stream)
+      xvec(i) = rand()
       enddo
 
 c one semiclassical choice

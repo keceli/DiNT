@@ -36,7 +36,7 @@ c Randomly spin the AG around each Cartesian axis
       implicit none
       include 'param.f'
       include 'c_ran.f'
-#include <sprng_f.h>
+
 
 c taken from ANT12
 c
@@ -79,14 +79,14 @@ C
         s2=2.0d0
 C     generate two random numbers(-1,1) with sum of square < 1
         do while(s1.ge.1.0d0)
-          ranm(1) = -1.0+2.0*sprng(rng_stream)
-          ranm(2) = -1.0+2.0*sprng(rng_stream)
+          ranm(1) = -1.0+2.0*rand()
+          ranm(2) = -1.0+2.0*rand()
           s1 = ranm(1)**2 + ranm(2)**2
         enddo
 C     generate another two random numbers with sum of square < 1
         do while(s2.ge.1.0d0 .or. s2.eq.0.d0)
-          ranm(3) = -1.0+2.0*sprng(rng_stream)
-          ranm(4) = -1.0+2.0*sprng(rng_stream)
+          ranm(3) = -1.0+2.0*rand()
+          ranm(4) = -1.0+2.0*rand()
           s2 = ranm(3)**2 + ranm(4)**2
         enddo
         q0 = ranm(1)
@@ -109,7 +109,7 @@ C     Change on angles s1(theta): 0-pi (angle to +z), s2(phi),
 C     s3(posi): 0-2pi
       else
         do i=1,3
-          ranm(i) = sprng(rng_stream)
+          ranm(i) = rand()
         enddo
 C     Three angles: uniform on cos(theta)
         cs1 = 1.d0-2.d0*ranm(1)

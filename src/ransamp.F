@@ -36,7 +36,7 @@ c-------------------------------------------------------------------------------
       implicit none
       include 'param.f'
       include 'c_ran.f'
-#include <sprng_f.h>
+
 
 c in/out
       integer ntot,nn
@@ -51,7 +51,7 @@ c local
       double precision r
       character*2 ctmp(nn)
 
-      r=sprng(rng_stream)
+      r=rand()
       r=r*dble(ntot)
       n=nint(r)
 

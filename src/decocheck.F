@@ -40,7 +40,7 @@ c a switch occurs, set NSURF to the new surface and set LHOP = .TRUE.
       include 'param.f'
       include 'c_sys.f'
       include 'c_ran.f'
-#include <sprng_f.h>
+
 
 c input
       integer nclu
@@ -55,7 +55,7 @@ c local
       double precision dxi,tmp
 
 c get random number
-      dxi = sprng(rng_stream)
+      dxi = rand()
 
 c check for switch
       newsurf = 0

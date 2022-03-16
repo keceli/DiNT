@@ -39,7 +39,7 @@ c INITx = 2.
       include 'param.f'
       include 'c_sys.f'
       include 'c_ran.f'
-#include <sprng_f.h>
+
 
       integer i,j,nclu,ido,im,nbound
       double precision etmp,mmm(mnat),xxm(3,mnat),ppm(3,mnat),
@@ -56,8 +56,8 @@ c generate two sets of 3*N-6 random numbers
         nbound=1
       endif
       do i=1,nbound
-        xvec(i) = sprng(rng_stream)
-        sgn(i) = sprng(rng_stream)
+        xvec(i) = rand()
+        sgn(i) = rand()
         if (sgn(i).ge.0.5d0) then
           sgn(i) = 1.d0
         else

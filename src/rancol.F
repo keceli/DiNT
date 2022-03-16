@@ -45,7 +45,7 @@ c and set x = E/kT to obtain E
       include 'param.f'
 c      include 'c_sys.f'
       include 'c_ran.f'
-#include <sprng_f.h>
+
 
 c in/out
       double precision temp0,ecol
@@ -57,7 +57,7 @@ c local
       ia = 2
       x=1.d0
       do i=1,ia
-        r=sprng(rng_stream)
+        r=rand()
         x=x*r
       enddo
       x=-dlog(x)

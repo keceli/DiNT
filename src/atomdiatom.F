@@ -40,7 +40,7 @@ c     from NAT8.1.
       implicit none
       include 'param.f'
       include 'c_ran.f'
-#include <sprng_f.h>
+
 c input
       integer arr,jj
       double precision rho,ecol,rin,rout,tau,ppreli
@@ -57,7 +57,7 @@ c local
       double precision theta,mdum,rmass,xji,ppo,xxo
 
       do i=1,5
-      xvec(i) = sprng(rng_stream)
+      xvec(i) = rand()
       enddo
 
       xji = dble(jj)+0.5d0

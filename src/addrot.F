@@ -35,7 +35,7 @@ c-------------------------------------------------------------------------------
       include 'param.f'
 c      include 'c_sys.f'
       include 'c_ran.f'
-#include <sprng_f.h>
+
 
       integer nclu
       double precision pp(3,mnat),mmm(mnat),xx(3,mnat)
@@ -135,9 +135,9 @@ c rotate to diagonalize mom
           write(6,*)"Choosing orientation of J evenly over a sphere."
           write(6,*)
  10       continue
-          jx = sprng(rng_stream)*2.d0-1.d0
-          jy = sprng(rng_stream)*2.d0-1.d0
-          jz = sprng(rng_stream)*2.d0-1.d0
+          jx = rand()*2.d0-1.d0
+          jy = rand()*2.d0-1.d0
+          jz = rand()*2.d0-1.d0
           tmp=dsqrt(jx**2+jy**2+jz**2)
           if (tmp.gt.1.d0) go to 10
           jx=jx/tmp*jj  ! normalize to a magnitude of JJ
@@ -151,7 +151,7 @@ c rotate to diagonalize mom
 c          tmpx = jj/dsqrt(jj*(jj+1.d0))*kk      ! quantum
           tmpx = kk                             ! classical
           if (nclu.eq.2) kk=0.
-          theta = sprng(rng_stream)*2.d0*pi
+          theta = rand()*2.d0*pi
           tmpy=dsin(theta)*dsqrt(jj**2-tmpx**2)
           tmpz=dcos(theta)*dsqrt(jj**2-tmpx**2)
           if (iunique.eq.1) then

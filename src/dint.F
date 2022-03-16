@@ -46,7 +46,7 @@ c     MPI version of Dint modified by Rui Ming Zhang
       include 'c_ran.f'
       include 'c_traj.f'
       include 'mpif.h'
-#include <sprng_f.h>
+
 
       integer im,initrng,minitrng,i,ia, n_tmp
       double precision t1,t2,t3,cputime,t3old,r
@@ -130,7 +130,8 @@ c     initialize this trajectory
 c     initialize electronic coordinates
       call initelec
 c     initialize the randum number generator
-      rng_stream = init_sprng(initrng,maxtraj,ranseed,SPRNG_DEFAULT)
+c     rng_stream = init_sprng(initrng,maxtraj,ranseed,SPRNG_DEFAULT)
+c      rng_stream = call srand(86456)
 
       write(6,'("...entering INITMOL...",/)')
       do im = 1 , nmol

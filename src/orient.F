@@ -39,7 +39,7 @@ c ORIENT AGs WITH RESPECT TO EACH OTHER
       include 'c_traj.f'
       include 'c_sys.f'
       include 'c_ran.f'
-#include <sprng_f.h>
+
  
       double precision xxm(3,mnat),ppm(3,mnat),mmm(mnat),murel,prel,
      & bimpact,ran,pref,tmp,tempqc2
@@ -121,7 +121,7 @@ c         compute relative reduced mass
 c         compute relative reduced mass
           murel=mmag(1)*mmag(2)/(mmag(1)+mmag(2))
           prel=dsqrt(2.d0*murel*erelqc)
-          ran = sprng(rng_stream)
+          ran = rand()
 
           if (bmaxqc.lt.0.d0) then
 c select b**2 evenly from bmin to bmax (this is the correct distribution if bmin=0...)

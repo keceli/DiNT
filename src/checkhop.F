@@ -43,7 +43,7 @@ c occur in HOP.
       include 'param.f'
       include 'c_sys.f'
       include 'c_ran.f'
-#include <sprng_f.h>
+
 
 c input
       double precision phop(mnsurf)
@@ -58,7 +58,7 @@ c local
       double precision dxi,tmp
 
 c get random number
-      dxi = sprng(rng_stream)
+      dxi = rand()
 
 c check for hop
       newsurf = 0

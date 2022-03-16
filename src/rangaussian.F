@@ -38,7 +38,7 @@ c Generate momenta randomly according to a Gaussian distribution.
       include 'param.f'
       include 'c_sys.f'
       include 'c_ran.f'
-#include <sprng_f.h>
+
 
 c input/output
       double precision xx,alpha,xe
@@ -51,8 +51,8 @@ c polar form of the Box-Muller transformation
 c transformed random numbers are from a distribution that has zero mean
 c and unit standard deviation
  10      continue
-         r1 = sprng(rng_stream)
-         r2 = sprng(rng_stream)
+         r1 = rand()
+         r2 = rand()
          x1=2.d0*r1-1.d0
          x2=2.d0*r2-1.d0
          w = x1*x1+x2*x2

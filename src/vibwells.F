@@ -38,7 +38,7 @@ c-------------------------------------------------------------------------------
       include 'c_traj.f'
       include 'c_ran.f'
       include 'c_output.f'
-#include <sprng_f.h>
+
 
       integer i,j,ii,imm,nfq
       double precision xxmt(3,mnat),ppmt(3,mnat),evb,sceng,
@@ -77,7 +77,7 @@ c       random microcanonical
         enddo
         tmp = 0.d0
         do i=1,nfq
-          r1(i) = sprng(rng_stream)
+          r1(i) = rand()
           tmp = tmp + r1(i)
         enddo
         write(6,*)"Mode QN and/or energy in unbound mode (au)"

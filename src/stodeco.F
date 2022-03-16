@@ -49,7 +49,7 @@ c at every step (for diagnostic purposes) via a call from DRIVER to ELECDECO.
       include 'param.f'
       include 'c_sys.f'
       include 'c_ran.f'
-#include <sprng_f.h>
+
 
       integer nsurf,i,ithistraj,istep
       double precision cre(mnsurf),cim(mnsurf),pem(mnsurf)
@@ -63,7 +63,7 @@ c     the below formula is correct
       t = step
       tau = stodecotau
       p = dexp(-t/tau)
-      x = sprng(rng_stream)
+      x = rand()
 
       if (x.gt.p.and.stodecotime.gt.0.d0) then  ! if stodecotime < 0, we have 
                                                 ! already decohered once since the last hop and 

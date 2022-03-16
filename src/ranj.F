@@ -38,7 +38,7 @@ c picks J & K
       include 'param.f'
       include 'c_sys.f'
       include 'c_ran.f'
-#include <sprng_f.h>
+
 
       integer nclu
       double precision jj,jmax,jmin,jtemp,brot1,brot2,kk
@@ -59,10 +59,10 @@ c      ljstyle = .true. ! quantal J dist
 c pick total J in one of two ways
       if (jtemp.lt.0.d0) then
 c (1) pick evenly from jmin to jmax
-      r1 = sprng(rng_stream)
+      r1 = rand()
       jj=jmin+r1*(jmax-jmin)
 c     pick evenly from -j to j
-      r1 = sprng(rng_stream)
+      r1 = rand()
       kk=-jj+r1*2.d0*jj
       write(6,*)"J = ",jj," hbar, selected evenly from ",
      &  jmin," to ",jmax," hbar"
@@ -124,7 +124,7 @@ c      stop
       IF (brot2.lt.0.d0) then
 
 c spherical top
-      r1 = sprng(rng_stream)  ! random number
+      r1 = rand()  ! random number
       tmp = 0.d0
       i=-1
       do while (tmp.lt.r1)
@@ -145,7 +145,7 @@ c        write(6,*)r1,tmp
       ELSE
 
 c symmetric top
-      r1 = sprng(rng_stream)  ! random number
+      r1 = rand()  ! random number
       tmp=0.d0
 c      i=-1
 c      j=-1

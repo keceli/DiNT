@@ -34,7 +34,7 @@ c-------------------------------------------------------------------------------
       implicit none
 c      include 'param.f'
 c      include 'c_ran.f'
-c#include <sprng_f.h>
+c
 
       integer nd,md,id,iseed,nsamp,irand,j,i
       double precision dd(md),avgi(100000),x,avgavg,tot,wtot,

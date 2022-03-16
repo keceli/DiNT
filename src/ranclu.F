@@ -41,7 +41,7 @@ c of RSMALL and RBIG, respectively.
       include 'param.f'
       include 'c_sys.f'
       include 'c_ran.f'
-#include <sprng_f.h>
+
 
       integer nclu,iclu,ikeep,itry,i,k,irej
       double precision xx(3,mnat),xyz(3),rr,rad
@@ -72,7 +72,7 @@ c generate nclu points within the sphere
           go to 10
         endif
         do i=1,3
-        ran(i) = sprng(rng_stream)
+        ran(i) = rand()
         enddo
         rad=0.d0
         do i=1,3
